@@ -29,6 +29,23 @@ main {
   font-weight: 500;
   font-style: italic;
   text-align: center;
+  animation-name: focus-in-contract;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+}
+
+@keyframes focus-in-contract {
+  0% {
+    letter-spacing: 1em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    letter-spacing: 0;
+    filter: blur(0);
+    opacity: 1;
+  }
 }
 
 .social-media-icons {
@@ -36,6 +53,16 @@ main {
   position: relative;
   top: -60px;
   text-align: center;
+  animation: focus-in-contract 3s linear;
+}
+
+.social-media-icons i {
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.social-media-icons i:hover {
+  transform: scale(1.1);
 }
 
 /* Footer */
