@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: whitesmoke;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Sticky navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(51, 51, 51);
+  padding: 5px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 60px;
+  background: whitesmoke;
+}
+
+.nav-left h1 {
+  font-size: 3rem;
+}
+
+#navbar.scrolled .nav-left h1 {
+  font-size: 1.5rem;
+  transition: font-size 0.3s ease;
+}
+
+.nav-right a {
+  margin-left: 20px;
+  color: hsl(0, 0%, 20%);
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.nav-right a:hover {
+  color: hsl(0, 0%, 50%);
+}
+
+/* Footer */
+footer {
+  color: rgb(51, 51, 51);
+  padding: 20px 0;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: hsl(0, 0%, 25%);
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: hsl(0, 0%, 50%);
+}
+
+/* Media Queries */
+
+/* Tablet */
+@media screen and (max-width: 1025px) {
+  .nav-left h1 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Smartphone */
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 5%;
+  }
+
+  .nav-right a {
+    margin-left: unset;
+    margin-right: 20px;
+  }
+}
