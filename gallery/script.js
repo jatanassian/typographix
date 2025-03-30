@@ -1,3 +1,30 @@
+// Modal logic
+const items = document.querySelectorAll('.grid > div');
+
+items.forEach(item => {
+  item.title = 'Click to enlarge';
+
+  item.addEventListener('click', () => {
+    const imgSrc = item.querySelector('img').src;
+
+    // Create modal
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    // Create image
+    const imgElement = document.createElement('img');
+    imgElement.src = imgSrc;
+    imgElement.alt = 'Enlarged abstract image';
+
+    // Add modal to page
+    modal.appendChild(imgElement);
+    document.body.appendChild(modal);
+
+    // Modal removal event
+    modal.addEventListener('click', modal.remove);
+  });
+});
+
 // Check if page is scrolled and adjust the olog size
 function checkScroll() {
   const navbar = document.getElementById('navbar');
