@@ -1,5 +1,5 @@
 // Modal logic
-const items = document.querySelectorAll('.grid > div');
+const items = document.querySelectorAll('.item');
 
 items.forEach(item => {
   item.title = 'Click to enlarge';
@@ -19,9 +19,15 @@ items.forEach(item => {
     // Add modal to page
     modal.appendChild(imgElement);
     document.body.appendChild(modal);
+    setTimeout(() => imgElement.classList.add('reveal'), 10);
 
     // Modal removal event
-    modal.addEventListener('click', modal.remove);
+    modal.addEventListener('click', () => {
+      imgElement.classList.remove('reveal');
+      setTimeout(() => {
+        modal.remove();
+      }, 300);
+    });
   });
 });
 

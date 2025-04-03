@@ -130,6 +130,33 @@ img {
   bottom: 0;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 101;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: cover;
+  transform: scale(0.7);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.modal img.reveal {
+  transform: scale(1);
+  opacity: 1;
+}
+
 /* Footer */
 footer {
   color: rgb(51, 51, 51);
@@ -154,25 +181,6 @@ footer {
 
 .social-icons a:hover {
   color: hsl(0, 0%, 50%);
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 101;
-}
-
-.modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: cover;
 }
 
 /* Media Queries */
