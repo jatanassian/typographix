@@ -1,3 +1,23 @@
+// Loading spinner animation
+function getRandomColor() {
+  return `#${Math.random().toString(16).slice(-6)}`;
+}
+
+function setRandomColors() {
+  [1, 2, 3].forEach(num => {
+    document.querySelector(`.color${num}`).style.backgroundColor = getRandomColor();
+  });
+}
+
+setRandomColors();
+setInterval(setRandomColors, 2000);
+
+// Display spinner then content
+setTimeout(() => {
+  document.querySelector('.loading-container').style.display = 'none';
+  document.querySelectorAll('.item').forEach(el => (el.style.opacity = '1'));
+}, 3000);
+
 // Modal logic
 const items = document.querySelectorAll('.item');
 
