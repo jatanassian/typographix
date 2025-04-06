@@ -1,3 +1,9 @@
+// Skeleton loading displayed for 3 seconds
+setTimeout(() => {
+  document.querySelectorAll('.skeleton').forEach(el => (el.style.display = 'none'));
+  document.querySelectorAll('.hidden').forEach(el => el.classList.remove('hidden'));
+}, 3000);
+
 // Check if page is scrolled and adjust the olog size
 function checkScroll() {
   const navbar = document.getElementById('navbar');
